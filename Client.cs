@@ -29,6 +29,7 @@ namespace Beauty_Salon
             this.status = Status.Новый;
             this.balance = 500;
             this.phone_number = "+375297850414";
+            //heloo fuck
 
             
         }
