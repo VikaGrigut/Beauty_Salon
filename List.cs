@@ -7,5 +7,6 @@ namespace Beauty_Salon
     public class List
     {
         public List<int> FUCK = new List<int>();
+        public int my = 5;
     }
 }
