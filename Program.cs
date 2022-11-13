@@ -6,8 +6,8 @@ namespace Beauty_Salon
     {
         static void Main(string[] args)
         {
-            Client vika = new Client("Vika", "Grigut", 03, 03, 2004, 1, 2500, "+375297850414");
-            Console.WriteLine(vika.date_of_birth);
+            Client vika = new Client("Vika", "Grigut", 03, 03, 2004, 2, 2500, "+375297850414");
+            Console.WriteLine(vika.status);
         }
     }
 }

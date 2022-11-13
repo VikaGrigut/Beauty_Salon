@@ -14,22 +14,20 @@ namespace Beauty_Salon
     {
         public string first_name;
         public string last_name;
-        public String date_of_birth;
+        public string date_of_birth;
         public Status status;
         public double balance;
         public string phone_number;
-        public string[] histore = new string[1];
+        public List<string> history ;
 
         public Client()
         {
-            this.first_name = "Aleksanra";
-            this.last_name = "Goncharik";
-            DateTime adate = new DateTime(2004, 02, 22);
-            this.date_of_birth = adate.ToString("D");
+            this.first_name = "Неопределено";
+            this.last_name = "Неопределено";
+            this.date_of_birth = "Неопределено";
             this.status = Status.Новый;
-            this.balance = 500;
-            this.phone_number = "+375297850414";
-            //heloo fuck
+            this.balance = 0;
+            this.phone_number = "Неопределён";
 
             
         }
@@ -39,18 +37,30 @@ namespace Beauty_Salon
             this.last_name = last_name;
             DateTime adate = new DateTime(year, month, day);
             this.date_of_birth = adate.ToString("d");
-            switch (status)
-            {
-                case 1:
-                    this.status = Status.Новый;
-                    break;
-                case 2:
-                    this.status = Status.Постоянный;
-                    break;
-                case 3:
-                    this.status = Status.VIP;
-                    break;
-            }
+            this.status = (Status)status;
+            this.balance = balance;
+            this.phone_number = phone_number;
+        }
+        public void Add_Client()
+        {
+            Console.WriteLine("Введите имя: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Введите фамилию: ");
+            string last_name = Console.ReadLine();
+            Console.WriteLine("Введите дату рождения (день.месяц.год): ");
+            string data = Console.ReadLine();
+            data.Split(".");
+            DateTime adate = new DateTime(data[0], data[1], data[2]);
+            Console.WriteLine("Выберете статус: \n1.Новый;\n2.Постоянный;\n3.VIP;\n");
+            int status = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите номер телефона: ");
+            string phone_number = Console.ReadLine(); 
+            Console.WriteLine("Введите баланс: ");
+            int balance = int.Parse(Console.ReadLine());
+            this.date_of_birth = adate.ToString("d");
+            this.first_name = name;
+            this.last_name = last_name;
+            this.status = (Status)status;
             this.balance = balance;
             this.phone_number = phone_number;
         }
